@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1 -- Button Component</title>
+    <style>
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        h2{
+            margin: 1.5 rem 0 0.5rem;
+        }
+
+        .btn{
+            display: inline-block;
+            padding: 0.6rem 1.25rem;
+            font-size: 1 rem;
+            font-weight: 600;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.15s, transform 0.1s;
+        }
+
+        .btn:active{
+            transform: scale(0.97);
+        }
+
+        .btn:focus-visible{
+            outline: 3px solid, #93c5fd; outline-offset: 2px;
+        }
+
+        .btnPrimary{
+            background: #2563eb; color: #fff;
+        }
+
+        .btnPrimary:hover{
+            background: 1d4ed8;
+        }
+
+        .btnSecondary{
+            background: transparent;
+            color: #2563eb;
+            border-color: #2563eb;
+        }
+
+        .btnSecondary:hover{
+            background:#eff6ff;
+        }
+
+        .btnDisabled,
+        .btn:disabled{
+            background: #d1d5db;
+            color: #6b7280;
+            cursor: not-allowed;
+        }
+
+        .btnDisabled:active{
+            transform: none;
+        }
+
+        .btnDanger{
+            background: #dc2626;
+            color: #fff;
+        }
+
+        .btnDanger:hover{
+            background: #b91c1c;
+        }
+
+        #output{
+            margin-top: 2rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- <script>
+        const output = document.getElementById('output');
+
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (btn.disabled) return;
+                output.textContent = `You clicked the "${btn.textContent}" button.`;
+            });
+        });
+    </script> -->
+    <div>
+        <h1>Button Modifiers</h1>
+    </div>
+
+    <div>
+    <h2>
+        Primary
+    </h2>
+    <button class="btn btnPrimary">
+        Primary
+    </button>
+    </div>
+
+    <div>
+        <h2>
+            Secondary
+        </h2>
+        <button class="btn btnSecondary">
+            Secondary
+        </button>
+    </div>
+
+    <div>
+        <h2>
+            Disabled
+        </h2>
+        <button class="btn btnDisabled">
+            Disabled
+        </button>
+    </div>
+
+    <div>
+        <h2>
+            Danger
+        </h2>
+        <button class="btn btnDanger">
+            Danger
+        </button>
+    </div>
+
+    <div>
+        <p id="output">
+            Click a button.
+        </p>
+    </div>
+
+    <script>
+        const output = document.getElementById('output');
+
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (btn.disabled) return;
+                output.textContent = `You clicked the "${btn.textContent}" button.`;
+            });
+        });
+    </script>
+</body>
+</html>
